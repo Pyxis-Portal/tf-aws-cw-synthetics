@@ -1,12 +1,12 @@
 
 output "cloudwatch_metric_alarm_arn" {
   description = "The ARN of the Cloudwatch metric alarm."
-  value       = try(aws_cloudwatch_metric_alarm.default_dinamy[0].arn, "")
+  value       = try(aws_cloudwatch_metric_alarm.default_dynamic[0].arn, "")
 }
 
 output "cloudwatch_metric_alarm_id" {
   description = "The ID of the Cloudwatch metric alarm."
-  value       = try(aws_cloudwatch_metric_alarm.default_dinamy[0].id, "")
+  value       = try(aws_cloudwatch_metric_alarm.default_dynamic[0].id, "")
 }
 
 output "log_group_arn" {
