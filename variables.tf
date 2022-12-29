@@ -163,6 +163,7 @@ variable "com_alarm_description" {
 
 variable "com_alarm_name" {
   type        = string
+  default     = null
   description = "(Required) The name for the composite alarm. This name must be unique within the region."
 }
 
@@ -173,6 +174,7 @@ variable "com_alarm_actions" {
 }
 variable "com_alarm_rule" {
   type        = string
+  default     = ""
   description = "(Required) An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For syntax, see Creating a Composite Alarm. The maximum length is 10240 characters."
 }
 
@@ -186,11 +188,13 @@ variable "create_dashboard" {
 
 variable "dashboard_name" {
   description = "(Required) The name of the dashboard."
+  default     = null
   type        = string
 }
 
 variable "dashboard_body" {
   type        = string
+  default     = null
   description = "(Required) The detailed information about the dashboard, including what widgets are included and their location on the dashboard. You can read more about the body structure in the documentation."
 }
 
@@ -206,6 +210,7 @@ variable "create_syn_canary" {
 
 variable "syn_runtime_version" {
   description = "(Required) Runtime version to use for the canary. Versions change often so consult the Amazon CloudWatch documentation for the latest valid versions. Values include syn-python-selenium-1.0, syn-nodejs-puppeteer-3.0, syn-nodejs-2.2, syn-nodejs-2.1, syn-nodejs-2.0, and syn-1.0."
+  default     = null
   type        = string
 }
 variable "syn_start_canary" {
@@ -228,6 +233,7 @@ variable "syn_canary_name" {
 
 variable "syn_s3_canary_bucket_name" {
   description = " (Required) Location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary."
+  default     = null
   type        = string
 }
 variable "syn_s3_canary_file_bucket_name" {
@@ -249,6 +255,7 @@ variable "syn_role_arn" {
 
 variable "syn_handler" {
   description = "(Required) Entry point to use for the source code when running the canary. This value must end with the string .handler"
+  default     = null
   type        = string
 }
 
@@ -291,6 +298,7 @@ variable "syn_rc_environment_variables" {
 
 variable "syn_sch_expression" {
   description = "(Required) Rate expression or cron expression that defines how often the canary is to run."
+  default     = 1
   type        = number
 }
 
